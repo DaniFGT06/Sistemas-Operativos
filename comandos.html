@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Comandos - Sistemas Operativos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">Sistemas Operativos</div>
+
+    <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a href="evolucion.html">Evolución</a>
+        <a href="comandos.html" class="active">Comandos</a>
+        <button id="darkBtn">Modo Oscuro</button>
+    </nav>
+</header>
+
+<main class="contenido">
+
+<h1>Manual de Comandos del Sistema</h1>
+
+<p>
+En esta sección se presentan comandos utilizados en <strong>CMD</strong> y 
+<strong>PowerShell</strong> para analizar el estado del sistema operativo,
+diagnosticar problemas y obtener información del hardware.
+</p>
+
+<hr>
+
+<h2>¿Cómo abrir el Símbolo del Sistema (CMD)?</h2>
+
+<div class="cards">
+    <div class="card grande">
+    <ol>
+        <li>Presiona <strong>Windows + R</strong>.</li>
+        <li>Escribe <code>cmd</code>.</li>
+        <li>Presiona <strong>Enter</strong>.</li>
+    </ol>
+
+    <p>
+        También puedes buscar <strong>"Símbolo del sistema"</strong> en el menú inicio.
+        Para comandos avanzados, ejecuta como administrador.
+        <img src="img/wr.png" alt="Windows Run" class="img-so">
+    </p>
+    </div>
+</div>
+
+<hr>
+
+<h2>¿Cómo abrir PowerShell?</h2>
+<img src="img/powershell.png" alt="PowerShell" class="img-so">
+
+<div class="cards">
+    <div class="card grande">
+    <ol>
+        <li>Haz clic derecho en el botón Inicio.</li>
+        <li>Selecciona <strong>Windows PowerShell</strong> o 
+        <strong>Terminal de Windows</strong>.</li>
+        <li>Opcional: Ejecutar como administrador.</li>
+    </ol>
+    <p>
+        PowerShell es una herramienta más avanzada que CMD y permite
+        automatización y administración profunda del sistema.
+    </p>
+    </div>
+</div>
+
+<hr>
+
+<h2>Recomendaciones antes de ejecutar comandos</h2>
+
+<div class="cards">
+    <div class="card grande">
+    <ul>
+        <li>Ejecutar como administrador cuando el comando lo requiera.</li>
+        <li>No cerrar la ventana mientras un análisis esté en proceso.</li>
+        <li>Leer cuidadosamente los mensajes del sistema.</li>
+        <li>Algunos comandos pueden requerir reiniciar el equipo.</li>
+    </ul>
+    </div>
+</div>
+
+<hr>
+
+<h2>Comandos del Sistema</h2>
+<p>
+A continuación se presentan los comandos organizados por categorías
+según el componente del sistema que analizan.
+</p>
+
+<!-- ================= CMD ================= -->
+<section class="bloque-comandos">
+
+<h2>CMD (Símbolo del Sistema)</h2>
+
+<div class="cards">
+
+<div class="card grande">
+<h3>Procesador y Sistema</h3>
+
+<p><code>systeminfo</code><br>
+Muestra información detallada del sistema (CPU, memoria y parches).</p>
+
+<p><code>perfmon /report</code><br>
+Genera un informe completo de rendimiento del sistema.</p>
+
+</div>
+
+<div class="card grande">
+<h3>Disco Duro</h3>
+
+<p><code>chkdsk C: /f /r</code><br>
+Revisa y repara errores en el disco duro.</p>
+
+<ul>
+<li><code>/f</code> Corrige errores automáticamente.</li>
+<li><code>/r</code> Localiza sectores defectuosos.</li>
+</ul>
+
+<p><code>fsutil dirty query C:</code><br>
+Comprueba si el volumen necesita reparación.</p>
+
+</div>
+
+<div class="card grande">
+<h3>Memoria RAM</h3>
+
+<p><code>mdsched.exe</code><br>
+Abre el diagnóstico de memoria de Windows.</p>
+
+<p><code>systeminfo</code><br>
+Muestra memoria instalada y disponible.</p>
+
+</div>
+
+<div class="card grande">
+<h3>Archivos del Sistema</h3>
+
+<p><code>sfc /scannow</code><br>
+Escanea y repara archivos dañados.</p>
+
+<p><code>DISM /Online /Cleanup-Image /RestoreHealth</code><br>
+Repara la imagen del sistema.</p>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= POWERSHELL ================= -->
+<section class="bloque-comandos">
+
+<h2>PowerShell</h2>
+
+<div class="cards">
+
+<div class="card grande">
+<h3>Procesador y Sistema</h3>
+
+<p><code>Get-ComputerInfo</code><br>
+Muestra información completa del sistema.</p>
+
+<p><code>Get-Process | Sort-Object CPU -Descending</code><br>
+Lista procesos que más CPU consumen.</p>
+
+</div>
+
+<div class="card grande">
+<h3>Disco Duro</h3>
+
+<p><code>Get-PhysicalDisk</code><br>
+Estado de discos físicos.</p>
+
+<p><code>Repair-Volume -DriveLetter C -Scan</code><br>
+Escanea errores del disco.</p>
+
+</div>
+
+<div class="card grande">
+<h3>Memoria RAM</h3>
+
+<p><code>Get-WmiObject Win32_PhysicalMemory</code><br>
+Información técnica de la RAM.</p>
+
+<p><code>Get-Counter '\Memory\Available MBytes'</code><br>
+Memoria disponible en tiempo real.</p>
+
+</div>
+
+<div class="card grande">
+<h3>Actualizaciones</h3>
+
+<p><code>Get-WindowsUpdateLog</code><br>
+Historial de actualizaciones.</p>
+
+<p><code>Install-Module PSWindowsUpdate</code><br>
+Gestiona actualizaciones desde PowerShell.</p>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= TERMINAL ================= -->
+<section class="terminal-section">
+
+<h2>Terminal Interactiva</h2>
+
+<div class="terminal">
+    <div id="output"></div>
+    <input type="text" id="inputCmd" placeholder="Escribe un comando...">
+</div>
+
+</section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

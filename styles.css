@@ -1,0 +1,229 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================= GENERAL ================= */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f6f9;
+    color: #111;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #111827;
+    color: white;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* menú */
+.menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.menu a.active {
+    border-bottom: 2px solid #0077ff;
+}
+
+.menu button {
+    background-color: #60a5fa;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* ================= CONTENIDO ================= */
+.contenido {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* ================= SECCIONES ================= */
+section {
+    padding: 40px 20px;
+}
+
+/* ================= IMÁGENES ================= */
+.imagen-principal {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.img-so {
+    margin: 30px auto;
+    display: block;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* ================= CARDS ================= */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+    text-align: left;
+    max-width: 500px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2,
+.card h3 {
+    margin-bottom: 15px;
+}
+
+/* comandos estilo terminal */
+.card strong,
+code {
+    display: inline-block;
+    background-color: #000;
+    color: #00ff88;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-family: monospace;
+    margin-bottom: 6px;
+}
+
+/* ================= TERMINAL ================= */
+.terminal {
+    background: black;
+    color: #22c55e;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 40px auto;
+    font-family: monospace;
+}
+
+#inputCmd {
+    width: 100%;
+    background: black;
+    border: none;
+    color: #22c55e;
+    outline: none;
+    margin-top: 10px;
+    font-family: monospace;
+}
+
+/* ================= TIMELINE ================= */
+.timeline {
+    border-left: 4px solid #60a5fa;
+    padding-left: 20px;
+}
+
+.timeline-item {
+    margin-bottom: 20px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background-color: #111827;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ================= DARK MODE ================= */
+/* IMPORTANTE: usa body.dark (tu JS usa esa clase) */
+
+body.dark {
+    background-color: #121212;
+    color: white;
+}
+
+body.dark .card {
+    background-color: #1e1e1e;
+}
+
+body.dark .navbar {
+    background-color: #000;
+}
+
+body.dark footer {
+    background-color: #000;
+}
+
+body.dark code,
+body.dark .card strong {
+    background-color: #111;
+}
+
+body.dark .menu a.active {
+    border-bottom: 2px solid #4da3ff;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: #1f2937;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+ol, ul {
+    text-align: left;
+    margin-left: 20px;
+    line-height: 1.6;
+}
+
+hr {
+    margin: 40px auto;
+    width: 60%;
+    opacity: 0.3;
+}
